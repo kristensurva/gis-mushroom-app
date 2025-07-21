@@ -66,13 +66,6 @@ public class GeoJsonLocation {
             this.type = type;
             this.coordinates = coordinates;
         }
-
-        @Override
-        public String toString() {
-            return "Geometry{" +
-                    "coordinates=" + Arrays.toString(coordinates) +
-                    '}';
-        }
     }
 
     public static class Properties {
@@ -96,13 +89,5 @@ public class GeoJsonLocation {
                     "description='" + description + '\'' +
                     '}';
         }
-    }
-
-    @Override
-    public String toString() {
-        return "GeoJsonLocation{" +
-                "geometry=" + geometry.toString() +
-                ", properties=" + properties.toString() +
-                '}';
     }
 }
