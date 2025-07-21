@@ -13,7 +13,7 @@ git clone https://github.com/kristensurva/gis-mushroom-app.git
 cd gis-mushroom-app
 ```
 2. Veendu, et PostgresSQL server töötab
-3. Loo andmebaas ja käivita schema 
+3. Loo andmebaas ja käivita schema (psql asukoht võiks olla system pathis olemas)
 ```bash
 # Create database (only if not created)
 psql -U postgres -c "CREATE DATABASE mushroom_gis;"
@@ -24,7 +24,7 @@ psql -U postgres -d mushroom_gis -f db/schema.sql
 4. Vajadusel konfigureeri application.properties faili
 5. Build app
 `
-./mvnw clean package
+mvnw clean package
 `
 6. Run app
 `
