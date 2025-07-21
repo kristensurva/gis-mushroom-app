@@ -16,10 +16,10 @@ cd gis-mushroom-app
 3. Loo andmebaas ja käivita schema (psql asukoht võiks olla system pathis olemas)
 ```bash
 # Create database (only if not created)
-psql -U postgres -c "CREATE DATABASE mushroom_gis;"
+psql -U postgres -c "CREATE DATABASE gis_db;"
 
 # Run schema to create tables
-psql -U postgres -d mushroom_gis -f db/schema.sql
+psql -U postgres -d gis_db -f db/schema.sql
 ```
 4. Vajadusel konfigureeri application.properties faili
 5. Build app
