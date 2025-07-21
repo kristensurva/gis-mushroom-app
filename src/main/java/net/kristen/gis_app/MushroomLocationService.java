@@ -36,7 +36,18 @@ public class MushroomLocationService {
     }
 
     public boolean update(String currentID, MushroomLocation location) {
-        if (!repository.existsByGeoJsonId(currentID)) return false;
+        // Check if current exists
+        Optional<MushroomLocation> existingOpt = repository.findByGeoJsonId(currentID);
+        if (existingOpt.isEmpty()) {
+            return false;
+        }
+        // Check if new geoJsonId is used by a different location
+        if (repository.existsByGeoJsonId(location.getGeoJsonId())) {
+            throw new DuplicateKeyException("Location with the new id '" + location.getGeoJsonId() + "' already exists!");
+        }
+        MushroomLocation existingLocation = existingOpt.get();
+        // Set the existing entity's PK id on the new location
+        location.setId(existingLocation.getId());
         repository.save(location);
         return true;
     }
