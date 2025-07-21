@@ -55,11 +55,10 @@ public class MushroomLocationController {
     @PatchMapping("/{geoJsonId}")
     public ResponseEntity<Void> patchLocation(@PathVariable String geoJsonId, @RequestBody GeoJsonLocation geoJsonLocation) {
         MushroomLocation location = service.fromGeoJson(geoJsonLocation);
-        location.setGeoJsonId(geoJsonId);
-        if (service.update(location)) {
+        if (service.update(geoJsonId, location)) {
             return ResponseEntity.accepted().build();
         } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Location with id '"+geoJsonLocation.getId()+"' doesn't exist.");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Location with id '"+geoJsonId+"' doesn't exist.");
         }
     }
 }
