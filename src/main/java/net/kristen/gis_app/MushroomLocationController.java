@@ -64,6 +64,5 @@ public class MushroomLocationController {
         } catch (DuplicateKeyException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }
-
     }
 }
