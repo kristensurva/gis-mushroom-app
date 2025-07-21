@@ -34,7 +34,7 @@ java -jar target/gis-app.jar
 * GET http://localhost:8080/api - tagastab kõik leiukohad
 * POST http://localhost:8080/api - GEOJSON kehaga, loob uue leiukoha
 * DELETE http://localhost:8080/api/{geoJsonId} - antud identifikaatoriga leiukoht kustutatakse
-* PATCH http://localhost:8080/api/{geoJsonId} - antud identifikaatoriga leiukoht muudetakse (On vajalik terve geoJSON body)
+* PATCH http://localhost:8080/api/{geoJsonId} - antud identifikaatoriga leiukoht muudetakse (On vajalik terve geoJSON body, kaasa arvatud uus id)
 
 
 ### Boonus:
