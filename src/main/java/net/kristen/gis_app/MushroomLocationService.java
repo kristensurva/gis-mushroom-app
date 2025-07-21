@@ -35,8 +35,8 @@ public class MushroomLocationService {
         return true;
     }
 
-    public boolean update(MushroomLocation location) {
-        if (!repository.existsById(location.getId())) return false;
+    public boolean update(String currentID, MushroomLocation location) {
+        if (!repository.existsByGeoJsonId(currentID)) return false;
         repository.save(location);
         return true;
     }
