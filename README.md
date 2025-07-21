@@ -58,4 +58,4 @@ Kaardi veebirakendus - http://localhost:8080/
 ```
 Id on identifikaator, mis on antud kasutaja poolt (andmebaasis GeoJsonId). Andmebaasis on ka automaatselt genereeritud primary key ID, mis on eraldi kaustaja poolt antud 'identifikaatorist'.
 
-Idealseelt oleksin implementeerinud rohkem "bad input" checke, kui kasutaja saadab halba infot. Praegu selleks jäi aega vähe.
+Idealseelt oleksin implementeerinud rohkem "bad input" checke, kui kasutaja saadab halba infot. Praegu selleks jäi aega vähe. Samuti peaks ettevaatlik olema error sõnumite tagastamisel kasutajale. Seda annaks paremini teha.
